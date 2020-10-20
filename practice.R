@@ -29,15 +29,18 @@ head(names_hex)
 head(names_oct)
 
 
-write.dna(hexgen,"hexacoralmtDNA.fasta", format="fasta")
-write.dna(octgen,"octocoralmtDNA.fasta", format="fasta")
+fash <-write.dna(hexgen,"hexacoralmtDNA.fasta", format="fasta")
+faso <-write.dna(octgen,"octocoralmtDNA.fasta", format="fasta")
 
 
+read.FASTA(file = "octocoralmtDNA.fasta")
 
+if (!requireNamespace("BiocManager", quietly=TRUE))
+  install.packages("BiocManager")
+BiocManager::install("DECIPHER")
 
-
-
-
+library(DECIPHER)
+update(all)
 
 
 
